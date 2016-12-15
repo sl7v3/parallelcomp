@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -p RM-shared
+#SBATCH --ntasks-per-node 4
+#SBATCH -t 0:05:00
+# echo commands to stdout
+set -x
+
+# run OpenMP program
+export OMP_NUM_THREADS=4
+./hw4 > output.data
